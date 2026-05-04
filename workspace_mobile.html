@@ -19,8 +19,8 @@
   --sb:env(safe-area-inset-bottom,0px);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-system,sans-serif;overflow:hidden;}
-body{display:flex;flex-direction:column;}
+html{height:100%;background:var(--bg);}
+body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-system,sans-serif;display:flex;flex-direction:column;overflow:hidden;position:fixed;width:100%;}
 
 /* topbar */
 .tb{padding:calc(var(--st) + 14px) 16px 10px;background:var(--bg);border-bottom:.5px solid var(--brd);flex-shrink:0;}
@@ -37,13 +37,14 @@ body{display:flex;flex-direction:column;}
 /* scroll area — chiave per iPhone */
 .page{
   flex:1;
-  overflow-y:scroll;
+  overflow-y:auto;
   -webkit-overflow-scrolling:touch;
-  overscroll-behavior:contain;
-  padding:12px 12px calc(var(--sb) + 80px);
+  overscroll-behavior-y:contain;
+  padding:12px 12px calc(var(--sb) + 100px);
   display:flex;
   flex-direction:column;
   gap:10px;
+  min-height:0;
 }
 
 /* card */
